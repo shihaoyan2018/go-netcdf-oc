@@ -4,7 +4,9 @@ Try to use go ,cgo,and netcdf'go_libary to learn how to use oc to discover the w
 ![]()
 ## 这是复现一个论文的实验所以进行的操作
 因为最近觉得c/c++太操蛋了，尤其是之前我用hdf库读取modis L16的数据的时候 。
-![]("jpg/go2.png")
+
+![]("jpg/go2.jpg")
+
 不过现在觉得还行，因为netcdf和hdf都是给了c库所以用c最合适，实在不行用c读了，写到文件里再用其他的文件流来读都比用第三方库用起来舒服。
 当然netcdf给了py库。用py还是不错的，毕竟用py的人太多了。
 说实在的，处理图像还是用idl或者c/c++最合适，因为idl是专门处理各种图像的，c/c++库多啊。Fortran也行，毕竟很多老教授不会用新货，所以库也不少。
@@ -18,7 +20,9 @@ Try to use go ,cgo,and netcdf'go_libary to learn how to use oc to discover the w
 它们居然编译成动态dll然后用lib当作dll入口。然后我一开始找资料以为把lib转为a就行，然后资料上也说行啊，但是这个lib是静态lib，不是netcdf库那种lib动态dll入口的lib，但是我仍然尝试了各种方法，用lib转def，用dll转def，然后再用mingw的工具生成.a文件，但就是不行。。。
 后来我想，不行，这个很操蛋，换个法子。
 于是我想是不是没找到函数指针，所以干脆直接把lib和dll合成一个a库链接不就行了，后来发现也不行，因为各种原因，其实是我不知道。。。
-![]("jpg/go3.png")
+
+![]("jpg/go3.jpg")
+
 后来我找资料发现，gcc在win下居然是模拟linux进行地，也就是说找到.so或者原生.a就行。于是我想要不就直接在linux上apt安装这个库再复制过来呗。
 但是我想，不行啊，因为如果是这样调用系统api不一样啊，所以暂时先否决了这个方法。
 于是我想，要不然在win下用cmake和make编译一遍netcdf 因为这样产生的文件就是.so和.a库了，所以我尝试编译了一下，然后发现，不行！！！
