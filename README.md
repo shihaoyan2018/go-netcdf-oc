@@ -5,7 +5,7 @@ Try to use go ,cgo,and netcdf'go_libary to learn how to use oc to discover the w
 ## 这是复现一个论文的实验所以进行的操作
 因为最近觉得c/c++太操蛋了，尤其是之前我用hdf库读取modis L16的数据的时候 。
 
-![](jpg/go2.jpg)
+![](jpg/go2.JPG)
 
 不过现在觉得还行，因为netcdf和hdf都是给了c库所以用c最合适，实在不行用c读了，写到文件里再用其他的文件流来读都比用第三方库用起来舒服。
 当然netcdf给了py库。用py还是不错的，毕竟用py的人太多了。
@@ -21,7 +21,7 @@ Try to use go ,cgo,and netcdf'go_libary to learn how to use oc to discover the w
 后来我想，不行，这个很操蛋，换个法子。
 于是我想是不是没找到函数指针，所以干脆直接把lib和dll合成一个a库链接不就行了，后来发现也不行，因为各种原因，其实是我不知道。。。
 
-![](jpg/go3.jpg)
+![](jpg/go3.JPG)
 
 后来我找资料发现，gcc在win下居然是模拟linux进行地，也就是说找到.so或者原生.a就行。于是我想要不就直接在linux上apt安装这个库再复制过来呗。
 但是我想，不行啊，因为如果是这样调用系统api不一样啊，所以暂时先否决了这个方法。
