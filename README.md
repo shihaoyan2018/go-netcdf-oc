@@ -58,3 +58,4 @@ Try to use go ,cgo,and netcdf'go_libary to learn how to use oc to discover the w
 
 还有就是cmake，make，automake，nmake，./configure这种编译工具链太麻烦了。当然是1、cmake-make.2、cmake-nmake.3、automake-./configure。当然也有直接写makefiles然后直接make的。
  
+ 
